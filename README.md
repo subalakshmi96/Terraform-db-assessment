@@ -17,7 +17,6 @@ The objective of this assessment is to design a production-oriented AWS infrastr
 - Git & GitHub
 - GitHub Actions
 
-### Screenshot
 
 > **Project Folder Structure**
 
@@ -43,7 +42,6 @@ An Ubuntu EC2 instance was created to develop and test the Terraform project.
 
 Initially, the project was started using a **t2.micro** instance. As additional packages such as Terraform, Git, and AWS CLI were installed, the root volume ran out of storage. To continue working without resizing the instance immediately, swap memory was temporarily configured. Later, a **t3.micro** instance with sufficient storage was used for the project.
 
-### Screenshot
 
 <img width="1090" height="294" alt="image" src="https://github.com/user-attachments/assets/2a8e97ad-85c7-4ce3-b630-334f9dd18b82" />
 
@@ -63,7 +61,6 @@ The following tools were installed on the EC2 instance:
 
 These tools are required to develop, validate, and manage the Terraform infrastructure.
 
-### Screenshot
 
 <img width="622" height="113" alt="image" src="https://github.com/user-attachments/assets/4543fc05-9d0e-4765-80bc-e63fd44ea862" />
 
@@ -87,8 +84,10 @@ The following values were configured:
 
 This allows Terraform to authenticate and provision AWS resources securely.
 
-### Screenshot
+<img width="586" height="39" alt="image" src="https://github.com/user-attachments/assets/00e0380a-c991-4564-8701-f26c06463590" />
 
+
+<img width="622" height="126" alt="image" src="https://github.com/user-attachments/assets/3efccc20-c3af-4691-867d-48e99e2544f8" />
 
 
 ---
@@ -119,9 +118,7 @@ Terraform-db-assessment/
 
 Using modules improves code reusability and maintainability, while separate environments enable different configurations for Development and Production.
 
-### Screenshot
 
-![Project Tree](screenshots/tree-output.png)
 
 ---
 
@@ -140,9 +137,9 @@ A reusable Terraform module was created to provision networking resources.
 
 This module provides the networking foundation required for ECS and RDS deployment.
 
-### Screenshot
+<img width="627" height="122" alt="image" src="https://github.com/user-attachments/assets/1e8d55b9-2333-4cd7-bf0b-53a0adb61fa0" />
 
-![Network Module](screenshots/network-module.png)
+<img width="626" height="288" alt="image" src="https://github.com/user-attachments/assets/8c81b2e6-6667-4a9c-b615-3957605645d1" />
 
 ---
 
@@ -163,9 +160,11 @@ A separate module was created to provision the compute layer.
 
 The ECS service is configured to run a sample **Nginx** container using **AWS Fargate**.
 
-### Screenshot
+<img width="622" height="98" alt="image" src="https://github.com/user-attachments/assets/8140cf38-5511-411b-98b4-ba86ed249bd5" />
 
-![ECS Module](screenshots/ecs-module.png)
+<img width="211" height="93" alt="image" src="https://github.com/user-attachments/assets/cc8b7374-5370-4a00-85f4-7f101e5f54b7" />
+
+<img width="510" height="126" alt="image" src="https://github.com/user-attachments/assets/5450ebae-85c4-4aeb-90c0-ebd168f09790" />
 
 ---
 
@@ -191,29 +190,11 @@ Environment-specific configuration files include:
 
 This structure allows infrastructure settings to differ between Development and Production while reusing the same Terraform modules.
 
-### Screenshot
-
-![Development Environment](screenshots/dev-environment.png)
 
 ---
 
 # Phase 4: Terraform Validation
 
-## Terraform Formatting
-
-Terraform formatting was verified using:
-
-```bash
-terraform fmt -recursive
-```
-
-This command ensures that all Terraform files follow HashiCorp's recommended formatting standards.
-
-### Screenshot
-
-![Terraform Format](screenshots/terraform-fmt.png)
-
----
 
 ## Terraform Initialization
 
@@ -229,9 +210,6 @@ During initialization:
 - Initialized backend configuration
 - Prepared the working directory
 
-### Screenshot
-
-![Terraform Init](screenshots/terraform-init.png)
 
 ---
 
@@ -245,9 +223,6 @@ terraform validate
 
 Terraform successfully verified the syntax and configuration of all infrastructure files.
 
-### Screenshot
-
-![Terraform Validate](screenshots/terraform-validate.png)
 
 ---
 
@@ -276,10 +251,6 @@ The plan displayed all AWS resources that would be created without actually prov
 
 This confirms that the Terraform configuration is syntactically correct and deployment-ready.
 
-### Screenshot
-
-![Terraform Plan](screenshots/terraform-plan.png)
-
 ---
 
 # Phase 5: GitHub Repository
@@ -301,9 +272,9 @@ git push -u origin main
 
 This enables version control and collaboration using GitHub.
 
-### Screenshot
 
-![GitHub Repository](screenshots/github-repository.png)
+<img width="890" height="387" alt="image" src="https://github.com/user-attachments/assets/3592e233-9108-40ba-b1c9-d43cb6f3fbcf" />
+
 
 ---
 
@@ -326,9 +297,9 @@ GitHub Actions was implemented to automate Terraform validation whenever code is
 
 This CI pipeline helps identify infrastructure issues early and ensures Terraform configurations remain valid before deployment.
 
-### Screenshot
 
-![GitHub Actions Workflow](screenshots/github-actions.png)
+<img width="360" height="589" alt="image" src="https://github.com/user-attachments/assets/54b979c1-7d36-4a5d-a8dd-b89194550936" />
+
 
 ---
 
@@ -343,9 +314,9 @@ Sensitive AWS credentials were securely stored using GitHub Secrets instead of h
 | `AWS_ACCESS_KEY_ID` | Authenticates Terraform with AWS |
 | `AWS_SECRET_ACCESS_KEY` | Provides secure access to AWS resources |
 
-### Screenshot
 
-![GitHub Secrets](screenshots/github-secrets.png)
+<img width="626" height="118" alt="image" src="https://github.com/user-attachments/assets/8f37dda5-d436-4b97-87d3-b6f8b9689939" />
+
 
 ---
 
@@ -364,8 +335,8 @@ After configuring the workflow and GitHub Secrets, the CI pipeline completed suc
 - ✅ Terraform Plan Generation
 - ✅ Upload Terraform Plan Artifact
 
-### Screenshot
 
-![Successful Workflow](screenshots/workflow-success.png)
+<img width="1333" height="455" alt="image" src="https://github.com/user-attachments/assets/d86690ee-63aa-45cc-9c90-95dadf500aa9" />
+
 
 ---
