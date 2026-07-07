@@ -339,4 +339,10 @@ After configuring the workflow and GitHub Secrets, the CI pipeline completed suc
 <img width="1333" height="455" alt="image" src="https://github.com/user-attachments/assets/d86690ee-63aa-45cc-9c90-95dadf500aa9" />
 
 
+<img width="1163" height="114" alt="image" src="https://github.com/user-attachments/assets/165a0c40-3e54-4292-909a-b51a0e319c78" />
+
+<img width="866" height="416" alt="image" src="https://github.com/user-attachments/assets/42352a0b-4743-4075-9d1c-f2f4663ba9b3" />
+
+
+
 ---
